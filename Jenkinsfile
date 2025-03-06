@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent { 
+        label 'docker-agent-python'
+    }
     triggers {
         pollSCM '* * * * *'
     }
@@ -7,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
+                bat '''
                 cd myapp
                 pip install -r requirements.txt
                 '''
@@ -16,17 +18,17 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing.."
-                sh '''
+                bat '''
                 cd myapp
-                python3 hello.py
-                python3 hello.py --name=Brad
+                python hello.py
+                python hello.py --name=Brad
                 '''
             }
         }
         stage('Deliver') {
             steps {
                 echo 'Deliver....'
-                sh '''
+                bat '''
                 echo "doing delivery stuff.."
                 '''
             }
