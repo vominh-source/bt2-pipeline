@@ -8,7 +8,6 @@ pipeline {
             steps {
                 echo "Building.."
                 bat '''
-                cd myapp
                 pip install -r requirements.txt
                 '''
             }
