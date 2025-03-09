@@ -22,10 +22,9 @@ pipeline {
             steps {
                 echo "Testing.."
                 bat '''
-                cd myapp
-                python hello.py
-                python hello.py --name=Brad
-                '''
+                    "C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" hello.py
+                    "C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" hello.py --name=Brad'''
+
             }
         }
         stage('Deliver') {
