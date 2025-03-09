@@ -15,9 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                bat '''
-                python -m pip install -r requirements.txt
-                '''
+                bat '"C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
             }
         }
         stage('Test') {
