@@ -4,6 +4,14 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
+        stage('Checkout') { // ⚠️ Giai đoạn này quan trọng để lấy code từ Git
+            steps {
+                git branch: 'main', 
+                    credentialsId: 'github-token', 
+                    url: 'https://github.com/vominh-source/bt2-pipeline.git'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo "Building.."
