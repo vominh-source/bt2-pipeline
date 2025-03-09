@@ -1,4 +1,3 @@
-import fire
 
 def hello(name="World"):
   print("hello")
