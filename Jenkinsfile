@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo "Building.."
                 bat '''
-                pip install -r requirements.txt
+                python -m pip install -r requirements.txt
                 '''
             }
         }
